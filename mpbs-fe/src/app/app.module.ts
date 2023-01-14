@@ -7,6 +7,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { HomePageComponent } from './views/home-page/home-page.component';
 import { PageNotFoundPageComponent } from './views/page-not-found-page/page-not-found-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SupportPageComponent } from './views/support-page/support-page.component';
+import { AboutPageComponent } from './views/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { PageNotFoundPageComponent } from './views/page-not-found-page/page-not-
     HeaderComponent,
     NotFoundComponent,
     HomePageComponent,
-    PageNotFoundPageComponent
+    PageNotFoundPageComponent,
+    SupportPageComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
