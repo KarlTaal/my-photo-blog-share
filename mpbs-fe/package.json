@@ -1,5 +1,21 @@
 {
-  "name": "ps-fe",
+  "name": "my-photo-blog-share",
+  "description": "App where you can store your media and share it with your friends",
+  "author": {
+    "name": "Karl Taal - https://www.linkedin.com/in/karl-taal/",
+    "email": "karltaal@gmail.com"
+  },
+  "contributors": [
+    "Kristiin Kull"
+  ],
+  "repository": {
+    "type": "git - private",
+    "url": "https://github.com/KarlTaal/my-photo-blog-share"
+  },
+  "bugs": {
+    "url": "https://github.com/KarlTaal/my-photo-blog-share/issues",
+    "email": "karltaal@gmail.com"
+  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
