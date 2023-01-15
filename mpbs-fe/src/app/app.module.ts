@@ -11,6 +11,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SupportPageComponent } from './views/support-page/support-page.component';
 import { AboutPageComponent } from './views/about-page/about-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertComponent } from './components/alert/alert.component';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { FeedPageComponent } from './views/feed-page/feed-page.component';
+import { DevPageComponent } from './views/dev-page/dev-page.component';
 
 @NgModule({
   declarations: [
@@ -21,15 +26,22 @@ import { HttpClientModule } from '@angular/common/http';
     PageNotFoundPageComponent,
     SupportPageComponent,
     AboutPageComponent,
+    AlertComponent,
+    FeedPageComponent,
+    DevPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faCircleXmark);
+  }
 }

@@ -1,0 +1,14 @@
+.alerts-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 20rem;
+}
+
+.alert-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
