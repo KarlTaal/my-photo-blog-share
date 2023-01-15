@@ -8,14 +8,6 @@
   "contributors": [
     "Kristiin Kull"
   ],
-  "repository": {
-    "type": "git - private",
-    "url": "https://github.com/KarlTaal/my-photo-blog-share"
-  },
-  "bugs": {
-    "url": "https://github.com/KarlTaal/my-photo-blog-share/issues",
-    "email": "karltaal@gmail.com"
-  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
