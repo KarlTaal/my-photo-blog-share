@@ -22,13 +22,6 @@ export class AlertBroker {
     });
   }
 
-  private addAlert(alert: Alert): void {
-    this.alerts.push(alert);
-    if (alert.dismissAfterSeconds) {
-      setTimeout(() => this.dismiss(alert), alert.dismissAfterSeconds * 1000);
-    }
-  }
-
   dismiss(alert: Alert): void {
     const alertIndex = this.alerts.indexOf(alert);
     if (alertIndex > -1) {
@@ -38,5 +31,12 @@ export class AlertBroker {
 
   dismissAll(): void {
     this.alerts.length = 0;
+  }
+
+  private addAlert(alert: Alert): void {
+    this.alerts.push(alert);
+    if (alert.dismissAfterSeconds) {
+      setTimeout(() => this.dismiss(alert), alert.dismissAfterSeconds * 1000);
+    }
   }
 }
