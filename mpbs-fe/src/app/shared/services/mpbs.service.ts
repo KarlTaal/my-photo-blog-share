@@ -13,4 +13,17 @@ export class MpbsService {
   healthCheck(): Observable<string> {
     return this.http.get<string>('http://localhost:1323/healthcheck');
   }
+
+  timeout(): Observable<string> {
+    return this.http.get<string>('http://localhost:1323/timeout');
+  }
+
+  internalError(): Observable<string> {
+    return this.http.get<string>('http://localhost:1323/error');
+  }
+
+  authRequired(): Observable<string> {
+    return this.http.get<string>('http://localhost:1323/auth');
+  }
+
 }

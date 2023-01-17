@@ -10,12 +10,13 @@ import { PageNotFoundPageComponent } from './views/page-not-found-page/page-not-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SupportPageComponent } from './views/support-page/support-page.component';
 import { AboutPageComponent } from './views/about-page/about-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './components/alert/alert.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FeedPageComponent } from './views/feed-page/feed-page.component';
 import { DevPageComponent } from './views/dev-page/dev-page.component';
+import { HttpMiddleware } from './core/http-middleware';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { DevPageComponent } from './views/dev-page/dev-page.component';
     HttpClientModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpMiddleware, multi: true}
+  ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {
