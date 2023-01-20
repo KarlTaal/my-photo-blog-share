@@ -17,6 +17,10 @@ import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FeedPageComponent } from './views/feed-page/feed-page.component';
 import { DevPageComponent } from './views/dev-page/dev-page.component';
 import { HttpMiddleware } from './core/http-middleware';
+import { SupportTicketSubmissionComponent } from './components/support-ticket-submission/support-ticket-submission.component';
+import { DropdownSingleComponent } from './components/dropdown-single/dropdown-single.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FileInputComponent } from './components/file-input/file-input.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +34,18 @@ import { HttpMiddleware } from './core/http-middleware';
     AlertComponent,
     FeedPageComponent,
     DevPageComponent,
+    SupportTicketSubmissionComponent,
+    DropdownSingleComponent,
+    FileInputComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    HttpClientModule,
-    FontAwesomeModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        HttpClientModule,
+        FontAwesomeModule,
+        ReactiveFormsModule,
+    ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpMiddleware, multi: true}
   ],

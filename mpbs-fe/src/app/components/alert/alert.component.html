@@ -7,7 +7,12 @@
       <fa-icon [icon]="resolveIcon(alert.type)"></fa-icon>
       <div style="width: 100%" [innerHTML]="alert.content"></div>
       <em class="fa-solid fa-user"></em>
-      <fa-icon *ngIf="alert.dismissible" (click)="alertBroker.dismiss(alert)" icon="circle-xmark" class="clickable"></fa-icon>
+      <fa-icon
+          *ngIf="alert.dismissible"
+          (click)="alertBroker.dismiss(alert)"
+          icon="circle-xmark"
+          class="clickable"
+      ></fa-icon>
     </div>
   </div>
   <div *ngIf="alertBroker.getAllAlerts().length > 1" class="d-flex justify-content-end">

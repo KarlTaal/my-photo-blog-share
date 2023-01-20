@@ -1,0 +1,21 @@
+<div class="support-ticket-form" [formGroup]="ticketForm">
+  <h4>Submit support ticket</h4>
+
+  <mpbs-dropdown-single
+      [formGroup]="ticketForm"
+      formKey="type"
+      [options]="getOptions()"
+  ></mpbs-dropdown-single>
+
+  <textarea formControlName="body"></textarea>
+
+  <mpbs-file-input
+      [formGroup]="ticketForm"
+      formKey="attachments"
+  ></mpbs-file-input>
+
+  <div class="support-ticket-actions">
+    <button class="clickable" (click)="clear()">Clear</button>
+    <button class="clickable" (click)="submit()">Submit</button>
+  </div>
+</div>
