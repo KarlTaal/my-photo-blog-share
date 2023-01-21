@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'mpbs-file-input',
@@ -10,7 +10,7 @@ export class FileInputComponent implements OnInit {
   @Input() formGroup!: FormGroup;
   @Input() formKey!: string;
 
-  @ViewChild('fileInput') fileInput!: ElementRef;
+  fileInput = new FormControl(null);
 
   ngOnInit(): void {
     this.initClearSubcription();
@@ -26,8 +26,8 @@ export class FileInputComponent implements OnInit {
 
   private initClearSubcription() {
     this.formGroup.get(this.formKey)?.valueChanges.subscribe(value => {
-      if (!value ) {
-        this.fileInput.nativeElement.value = '';
+      if (!value || value?.length === 0) {
+        this.fileInput.reset();
       }
     });
   }

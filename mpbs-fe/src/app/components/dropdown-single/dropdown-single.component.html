@@ -1,11 +1,21 @@
-<div *ngIf="formGroup && formKey" [formGroup]="formGroup">
+<div
+    *ngIf="formGroup && formKey"
+    [formGroup]="formGroup"
+    [ngClass]="getSizeClass()"
+    style="position:relative;"
+>
   <select
+      class="form-control cursor-pointer"
       [formControlName]="formKey"
       [value]="formGroup.get(formKey)?.value"
-      [ngClass]="getSizeClass()"
   >
     <option *ngFor="let option of options ?? []" [ngValue]="option.value">
       {{ option.label }}
     </option>
   </select>
+  <fa-icon
+      [icon]="getArrowDownIcon()"
+      class="cursor-pointer select-icon"
+  >
+  </fa-icon>
 </div>

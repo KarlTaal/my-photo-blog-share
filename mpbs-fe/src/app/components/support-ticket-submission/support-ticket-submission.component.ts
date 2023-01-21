@@ -62,7 +62,7 @@ export class SupportTicketSubmissionComponent implements OnInit {
     this.ticketForm = this.fb.group({
       type: [ this.DEFAULT_TICKET_TYPE, Validators.required ],
       body: [ null, [ Validators.required, Validators.minLength(this.MIN_BODY_CHAR_LENGTH) ] ],
-      attachments: [ [] ],
+      attachments: [ null ],
     });
   }
 }

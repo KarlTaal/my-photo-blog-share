@@ -12,12 +12,13 @@ import { SupportPageComponent } from './views/support-page/support-page.componen
 import { AboutPageComponent } from './views/about-page/about-page.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './components/alert/alert.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FeedPageComponent } from './views/feed-page/feed-page.component';
 import { DevPageComponent } from './views/dev-page/dev-page.component';
 import { HttpMiddleware } from './core/http-middleware';
-import { SupportTicketSubmissionComponent } from './components/support-ticket-submission/support-ticket-submission.component';
+import {
+  SupportTicketSubmissionComponent,
+} from './components/support-ticket-submission/support-ticket-submission.component';
 import { DropdownSingleComponent } from './components/dropdown-single/dropdown-single.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FileInputComponent } from './components/file-input/file-input.component';
@@ -38,21 +39,19 @@ import { FileInputComponent } from './components/file-input/file-input.component
     DropdownSingleComponent,
     FileInputComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgbModule,
-        HttpClientModule,
-        FontAwesomeModule,
-        ReactiveFormsModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
+  ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: HttpMiddleware, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: HttpMiddleware, multi: true},
   ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {
-  constructor(library: FaIconLibrary) {
-    library.addIcons(faCircleXmark);
-  }
+
 }

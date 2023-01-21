@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertBroker } from '../../components/alert/alert-broker';
 import { MpbsService } from '../../shared/services/mpbs.service';
 
@@ -7,9 +7,13 @@ import { MpbsService } from '../../shared/services/mpbs.service';
   templateUrl: './dev-page.component.html',
   styleUrls: [ './dev-page.component.scss' ],
 })
-export class DevPageComponent {
+export class DevPageComponent implements OnInit {
 
   constructor(private alertBroker: AlertBroker, private mpbsService: MpbsService) {
+  }
+
+  ngOnInit(): void {
+    this.sendDummyRequests();
   }
 
   addAlert() {

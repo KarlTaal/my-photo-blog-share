@@ -19,5 +19,4 @@ export class HttpMiddleware implements HttpInterceptor {
     );
   }
 
-
 }

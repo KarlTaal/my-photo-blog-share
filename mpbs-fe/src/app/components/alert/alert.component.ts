@@ -8,7 +8,7 @@ import {
   faFaceFrownOpen,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
-import { faBookmark, faEye, faLightbulb } from '@fortawesome/free-regular-svg-icons';
+import { faBookmark, faCircleXmark, faEye, faLightbulb } from '@fortawesome/free-regular-svg-icons';
 import { AlertBroker } from './alert-broker';
 
 @Component({
@@ -43,4 +43,7 @@ export class AlertComponent {
     }
   }
 
+  getCloseIcon(): IconDefinition {
+    return faCircleXmark;
+  }
 }

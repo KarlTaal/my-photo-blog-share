@@ -1,7 +1,7 @@
 <input
-    #fileInput
     type="file"
     class="form-control"
     multiple="multiple"
+    [formControl]="fileInput"
     (change)="onFileChange($event)"
 >
