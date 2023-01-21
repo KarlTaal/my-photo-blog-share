@@ -1,0 +1,6 @@
+{
+  "description": "NPM package for generating typescript code from proto",
+  "dependencies": {
+    "protoc-gen-ts": "^0.8.5"
+  }
+}

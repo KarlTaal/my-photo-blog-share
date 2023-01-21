@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SupportTicket, SupportTicketType } from '../../shared/models/support-ticket.model';
 import { DropdownOption } from '../../shared/models/dropdown.model';
 import { StringUtils } from '../../shared/util/StringUtils';
 import { AlertBroker } from '../alert/alert-broker';
 import { AlertType } from '../alert/alert.model';
+import { SupportTicket, SupportTicketType } from '../../../../generated/support-ticket';
+
 
 @Component({
   selector: 'mpbs-support-ticket-submission',
@@ -26,14 +27,15 @@ export class SupportTicketSubmissionComponent implements OnInit {
   }
 
   getSupportTicketFromForm(): SupportTicket {
-    return {
+    return new SupportTicket({
       type: this.ticketForm.get('type')?.value,
       body: this.ticketForm.get('body')?.value,
-    };
+      attachments: [],
+    });
   }
 
   getOptions(): DropdownOption[] {
-    return Object.values(SupportTicketType).map((enumVal) => {
+    return Object.keys(SupportTicketType).map((enumVal) => {
       return {
         value: enumVal,
         label: StringUtils.toTitleCase(enumVal),

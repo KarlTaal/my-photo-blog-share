@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package = "protocolbuffers/protobuf/go";
+
+message SupportTicket {
+  string type = 1;
+  string body = 2;
+  repeated string attachments = 3;
+}
+
+enum SupportTicketType {
+  GENERAL = 0;
+  FEATURE = 1;
+  BUG = 2;
+}
