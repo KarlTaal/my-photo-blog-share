@@ -4,7 +4,8 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/swaggo/echo-swagger"
-	"mpbs-be/controller"
+	"mpbs-be/controller/health"
+	"mpbs-be/controller/support"
 	_ "mpbs-be/docs"
 )
 
@@ -23,8 +24,8 @@ func main() {
 
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 
-	controller.InitHealthRoutes(e)
-	controller.InitSupportRoutes(e)
+	health.InitHealthRoutes(e)
+	support.InitSupportRoutes(e)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

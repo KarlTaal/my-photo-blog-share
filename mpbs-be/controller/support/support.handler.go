@@ -1,4 +1,4 @@
-package controller
+package support
 
 import (
 	"github.com/labstack/echo/v4"
@@ -7,11 +7,7 @@ import (
 	_ "net/http/httputil"
 )
 
-func InitSupportRoutes(e *echo.Echo) {
-	e.POST("/support/ticket", CreateSupportTicket)
-}
-
-// CreateSupportTicket godoc
+// CreateSupportTicketHandler godoc
 //
 //	@Summary		Support ticket create
 //	@Description	Create new support ticket
@@ -20,12 +16,10 @@ func InitSupportRoutes(e *echo.Echo) {
 //	@Param			ticket	body	payloads.SupportTicket	true	"Add support ticket"
 //	@Success		200	{object}	payloads.SupportTicket
 //	@Router			/support/ticket [post]
-func CreateSupportTicket(c echo.Context) error {
-
+func CreateSupportTicketHandler(c echo.Context) error {
 	supportTicket := new(payloads.SupportTicket)
 	if err := c.Bind(supportTicket); err != nil {
 		return err
 	}
-
 	return c.JSON(http.StatusOK, supportTicket)
 }
