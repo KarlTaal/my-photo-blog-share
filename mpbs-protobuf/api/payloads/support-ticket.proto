@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "protocolbuffers/protobuf/go";
+option go_package = "protocolbuffers/protobuf/go/payloads";
 
 message SupportTicket {
   string type = 1;

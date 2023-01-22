@@ -1,0 +1,17 @@
+### IntelliJ IDEA ###
+/.idea/
+.idea
+*.iws
+*.iml
+*.ipr
+
+
+### VS Code ###
+.vscode/
+**/.history
+
+### Angular ###
+**/.angular/
+
+**/generated/
+**/pkg/
