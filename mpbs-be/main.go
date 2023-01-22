@@ -3,10 +3,17 @@ package main
 import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"mpbs-be/generated/protocolbuffers/protobuf/go/payloads"
-	"net/http"
+	"github.com/swaggo/echo-swagger"
+	"mpbs-be/controller"
+	_ "mpbs-be/docs"
 )
 
+// @title Echo Swagger API
+// @version 1.0
+
+// @host localhost:1323
+// @BasePath /
+// @schemes http
 func main() {
 	e := echo.New()
 
@@ -14,23 +21,10 @@ func main() {
 	e.Use(middleware.Recover())
 	e.Use(middleware.CORS())
 
-	ticket := payloads.SupportTicket{Attachments: nil, Body: "test", Type: "type-test"}
+	e.GET("/swagger/*", echoSwagger.WrapHandler)
 
-	e.GET("/healthcheck", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, ticket)
-	})
-
-	e.GET("/timeout", func(c echo.Context) error {
-		return c.JSON(http.StatusRequestTimeout, "Timeout!")
-	})
-
-	e.GET("/error", func(c echo.Context) error {
-		return c.JSON(http.StatusInternalServerError, "Internal error!")
-	})
-
-	e.GET("/auth", func(c echo.Context) error {
-		return c.JSON(http.StatusForbidden, "Access denied!")
-	})
+	controller.InitHealthRoutes(e)
+	controller.InitSupportRoutes(e)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
