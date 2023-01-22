@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { DropdownOption } from '../../shared/models/dropdown.model';
 import { FormGroup } from '@angular/forms';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { DropdownOption } from './dropdown.model';
 
 @Component({
   selector: 'mpbs-dropdown-single',

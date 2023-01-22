@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DropdownOption } from '../../shared/models/dropdown.model';
 import { StringUtils } from '../../shared/util/StringUtils';
 import { AlertBroker } from '../alert/alert-broker';
 import { AlertType } from '../alert/alert.model';
-import { SupportTicket, SupportTicketType } from '../../../../generated/support-ticket';
+import { SupportTicket, SupportTicketType } from '../../../../generated/api/payloads/support-ticket';
+import { DropdownOption } from '../dropdown-single/dropdown.model';
 
 
 @Component({
