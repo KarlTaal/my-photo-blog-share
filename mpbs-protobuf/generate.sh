@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Paths where generated code will be put
 PATH_TO_FE_GENERATED='../mpbs-fe/generated'
 PATH_TO_BE_GENERATED='../mpbs-be/generated'
 
