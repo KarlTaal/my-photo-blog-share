@@ -1,7 +1,7 @@
 <div class="alerts-container">
   <div *ngFor="let alert of alertBroker.getAllAlerts()"
        class="alert"
-       [ngClass]="'alert-' + alert.type"
+       [ngClass]="getClasses(alert)"
   >
     <div class="alert-container">
       <fa-icon [icon]="resolveIcon(alert.type)"></fa-icon>

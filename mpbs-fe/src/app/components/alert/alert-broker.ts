@@ -18,7 +18,7 @@ export class AlertBroker {
       icon: true,
       dismissible: true,
       content: content,
-      dismissAfterSeconds: dismissAfterSeconds ?? AlertBroker.resolveDefaultTimeout(type),
+      dismissAfterSeconds: dismissAfterSeconds ?? AlertBroker.resolveDefaultTimeoutSeconds(type),
     });
   }
 
@@ -36,11 +36,15 @@ export class AlertBroker {
   private addAlert(alert: Alert): void {
     this.alerts.push(alert);
     if (alert.dismissAfterSeconds) {
+      const fadeDurationSeconds = 2;
+      let startFadeAfterSeconds = alert.dismissAfterSeconds - fadeDurationSeconds;
+      startFadeAfterSeconds = startFadeAfterSeconds < 0 ? 0 : startFadeAfterSeconds;
+      setTimeout(() => alert.classes = ['fade-out-2'], startFadeAfterSeconds * 1000);
       setTimeout(() => this.dismiss(alert), alert.dismissAfterSeconds * 1000);
     }
   }
 
-  private static resolveDefaultTimeout(alertType: AlertType): number {
+  private static resolveDefaultTimeoutSeconds(alertType: AlertType): number {
     switch (alertType) {
       case AlertType.PRIMARY:
       case AlertType.SUCCESS:

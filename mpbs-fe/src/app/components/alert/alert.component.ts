@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertType } from './alert.model';
+import { Alert, AlertType } from './alert.model';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faBell,
@@ -43,4 +43,7 @@ export class AlertComponent {
     }
   }
 
+  getClasses(alert: Alert): string[] {
+    return [ `alert-${ alert.type }`, ...(alert.classes ?? []) ];
+  }
 }

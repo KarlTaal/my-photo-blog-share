@@ -4,6 +4,7 @@ export interface Alert {
   dismissible: boolean;
   content: string;
   dismissAfterSeconds?: number;
+  classes?: string[]
 }
 
 export enum AlertType {
