@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'mpbs-badge-button',
@@ -6,5 +6,4 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./mpbs-badge-button.component.scss']
 })
 export class MpbsBadgeButtonComponent {
-  @Output() click: EventEmitter<void> = new EventEmitter<void>();
 }
