@@ -1,15 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractInputComponent } from '../abstract-input.component';
 
 @Component({
   selector: 'mpbs-file-input',
   templateUrl: './file-input.component.html',
   styleUrls: [ './file-input.component.scss' ],
 })
-export class FileInputComponent implements OnInit {
-  @Input() formGroup!: FormGroup;
-  @Input() formKey!: string;
-
+export class FileInputComponent extends AbstractInputComponent  implements OnInit {
   fileInput = new FormControl(null);
 
   ngOnInit(): void {

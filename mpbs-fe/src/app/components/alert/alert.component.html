@@ -10,7 +10,7 @@
       <mpbs-close-button *ngIf="alert.dismissible" (click)="alertBroker.dismiss(alert)"></mpbs-close-button>
     </div>
   </div>
-  <div *ngIf="alertBroker.getAllAlerts().length > 1" class="d-flex justify-content-end">
+  <div *ngIf="showDismissAll()" class="d-flex justify-content-end">
     <mpbs-badge-button (click)="alertBroker.dismissAll()">Dismiss All</mpbs-badge-button>
   </div>
 </div>

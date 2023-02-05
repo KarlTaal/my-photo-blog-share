@@ -37,7 +37,7 @@ export class AlertBroker {
     this.alerts.push(alert);
     if (alert.dismissAfterSeconds) {
       const fadeDurationSeconds = 2;
-      let startFadeAfterSeconds = alert.dismissAfterSeconds - fadeDurationSeconds;
+      let startFadeAfterSeconds = alert.dismissAfterSeconds - fadeDurationSeconds + 0.3;
       startFadeAfterSeconds = startFadeAfterSeconds < 0 ? 0 : startFadeAfterSeconds;
       setTimeout(() => alert.classes = ['fade-out-2'], startFadeAfterSeconds * 1000);
       setTimeout(() => this.dismiss(alert), alert.dismissAfterSeconds * 1000);

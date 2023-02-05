@@ -7,13 +7,13 @@
       [options]="getOptions()"
   ></mpbs-dropdown-single>
 
-  <textarea
-      class="form-control"
-      formControlName="body"
-  ></textarea>
+  <mpbs-textarea
+      [formGroup]="ticketForm"
+      formKey="body"
+  ></mpbs-textarea>
 
   <div class="support-ticket-actions">
-    <mpbs-button class="cursor-pointer" (click)="clear()">Clear</mpbs-button>
-    <mpbs-button class="cursor-pointer" (click)="submit()">Submit</mpbs-button>
+    <mpbs-secondary-button class="cursor-pointer" (click)="clear()">Clear</mpbs-secondary-button>
+    <mpbs-primary-button class="cursor-pointer" (click)="submit()">Submit</mpbs-primary-button>
   </div>
 </div>

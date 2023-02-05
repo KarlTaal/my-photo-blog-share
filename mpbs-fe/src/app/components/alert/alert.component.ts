@@ -46,4 +46,8 @@ export class AlertComponent {
   getClasses(alert: Alert): string[] {
     return [ `alert-${ alert.type }`, ...(alert.classes ?? []) ];
   }
+
+  showDismissAll(): boolean {
+    return this.alertBroker.getAllAlerts().length > 1
+  }
 }

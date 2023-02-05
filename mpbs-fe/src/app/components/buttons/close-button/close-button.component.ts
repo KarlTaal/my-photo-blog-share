@@ -4,10 +4,10 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'mpbs-close-button',
-  templateUrl: './mpbs-close-button.component.html',
-  styleUrls: [ './mpbs-close-button.component.scss' ],
+  templateUrl: './close-button.component.html',
+  styleUrls: [ './close-button.component.scss' ],
 })
-export class MpbsCloseButtonComponent {
+export class CloseButtonComponent {
   getCloseIcon(): IconDefinition {
     return faCircleXmark;
   }

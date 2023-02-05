@@ -20,8 +20,8 @@ import {
   SupportTicketSubmissionComponent,
 } from './components/support-ticket-submission/support-ticket-submission.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MpbsInputModuleModule } from './components/inputs/mpbs-input-module.module';
-import { MpbsButtonsModuleModule } from './components/buttons/mpbs-buttons-module.module';
+import { ButtonsModuleModule } from './components/buttons/buttons-module.module';
+import { InputModuleModule } from './components/inputs/input-module.module';
 
 @NgModule({
   declarations: [
@@ -44,8 +44,8 @@ import { MpbsButtonsModuleModule } from './components/buttons/mpbs-buttons-modul
     HttpClientModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    MpbsInputModuleModule,
-    MpbsButtonsModuleModule
+    InputModuleModule,
+    ButtonsModuleModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpMiddleware, multi: true},

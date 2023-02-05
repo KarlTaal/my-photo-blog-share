@@ -1,0 +1,19 @@
+button {
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.7rem;
+  border: unset;
+}
+
+button:hover {
+  filter: brightness(110%)
+}
+
+.primary {
+  background-color: #66ef5e;
+  border: solid 1px #509649;
+}
+
+.secondary {
+  background-color: #f5f3f3;
+  border: solid 1px #bdb8b8;
+}
