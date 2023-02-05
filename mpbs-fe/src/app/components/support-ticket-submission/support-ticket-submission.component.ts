@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SupportTicket, SupportTicketType } from 'generated/api/payloads/support-ticket';
 import { StringUtils } from '../../shared/util/StringUtils';
 import { AlertBroker } from '../alert/alert-broker';
 import { AlertType } from '../alert/alert.model';
-import { SupportTicket, SupportTicketType } from '../../../../generated/api/payloads/support-ticket';
 import { DropdownOption } from '../dropdown-single/dropdown.model';
 
 
@@ -13,9 +13,10 @@ import { DropdownOption } from '../dropdown-single/dropdown.model';
   styleUrls: [ './support-ticket-submission.component.scss' ],
 })
 export class SupportTicketSubmissionComponent implements OnInit {
+  @Output() submitTicket: EventEmitter<SupportTicket> = new EventEmitter<SupportTicket>();
 
   readonly MIN_BODY_CHAR_LENGTH = 15;
-  readonly DEFAULT_TICKET_TYPE = SupportTicketType.GENERAL;
+  readonly DEFAULT_TICKET_TYPE = SupportTicketType[SupportTicketType.GENERAL];
 
   ticketForm!: FormGroup;
 
@@ -26,16 +27,8 @@ export class SupportTicketSubmissionComponent implements OnInit {
     this.createFormGroup();
   }
 
-  getSupportTicketFromForm(): SupportTicket {
-    return new SupportTicket({
-      type: this.ticketForm.get('type')?.value,
-      body: this.ticketForm.get('body')?.value,
-      attachments: [],
-    });
-  }
-
   getOptions(): DropdownOption[] {
-    return Object.keys(SupportTicketType).map((enumVal) => {
+    return StringUtils.enumToKeysArray(SupportTicketType).map((enumVal) => {
       return {
         value: enumVal,
         label: StringUtils.toTitleCase(enumVal),
@@ -49,10 +42,7 @@ export class SupportTicketSubmissionComponent implements OnInit {
 
   submit() {
     if (this.ticketForm.valid) {
-      this.alertBroker.add(
-        `Valid form<br/>${ this.ticketForm?.get('type')?.value }<br/>${ this.ticketForm?.get('body')?.value }`,
-        AlertType.SUCCESS,
-      );
+      this.emitTicket();
     } else {
       if (this.ticketForm?.invalid) {
         this.alertBroker.add(`Teksti miinimum pikkus on ${ this.MIN_BODY_CHAR_LENGTH } tähemärki`, AlertType.DANGER);
@@ -60,11 +50,17 @@ export class SupportTicketSubmissionComponent implements OnInit {
     }
   }
 
+  private emitTicket() {
+    this.submitTicket.emit(new SupportTicket({
+      type: this.ticketForm.get('type')?.value,
+      body: this.ticketForm.get('body')?.value,
+    }));
+  }
+
   private createFormGroup() {
     this.ticketForm = this.fb.group({
       type: [ this.DEFAULT_TICKET_TYPE, Validators.required ],
-      body: [ null, [ Validators.required, Validators.minLength(this.MIN_BODY_CHAR_LENGTH) ] ],
-      attachments: [ null ],
+      body: [ 'asdfn asdfsadfasdf ad sdf asdf sda fsa', [ Validators.required, Validators.minLength(this.MIN_BODY_CHAR_LENGTH) ] ],
     });
   }
 }

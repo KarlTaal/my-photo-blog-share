@@ -4,7 +4,6 @@ option go_package = "protocolbuffers/protobuf/go/payloads";
 message SupportTicket {
   string type = 1;
   string body = 2;
-  repeated string attachments = 3;
 }
 
 enum SupportTicketType {

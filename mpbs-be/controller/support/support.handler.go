@@ -14,12 +14,11 @@ import (
 //	@Accept			json
 //	@Produce		json
 //	@Param			ticket	body	payloads.SupportTicket	true	"Add support ticket"
-//	@Success		200	{object}	payloads.SupportTicket
 //	@Router			/support/ticket [post]
 func CreateSupportTicketHandler(c echo.Context) error {
 	supportTicket := new(payloads.SupportTicket)
 	if err := c.Bind(supportTicket); err != nil {
 		return err
 	}
-	return c.JSON(http.StatusOK, supportTicket)
+	return c.JSON(http.StatusOK, nil)
 }

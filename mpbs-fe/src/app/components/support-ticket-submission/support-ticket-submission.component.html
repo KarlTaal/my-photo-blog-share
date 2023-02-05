@@ -12,11 +12,6 @@
       formControlName="body"
   ></textarea>
 
-  <mpbs-file-input
-      [formGroup]="ticketForm"
-      formKey="attachments"
-  ></mpbs-file-input>
-
   <div class="support-ticket-actions">
     <button class="cursor-pointer" (click)="clear()">Clear</button>
     <button class="cursor-pointer" (click)="submit()">Submit</button>
