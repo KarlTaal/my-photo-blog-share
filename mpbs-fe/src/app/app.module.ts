@@ -19,9 +19,9 @@ import { HttpMiddleware } from './core/http-middleware';
 import {
   SupportTicketSubmissionComponent,
 } from './components/support-ticket-submission/support-ticket-submission.component';
-import { DropdownSingleComponent } from './components/dropdown-single/dropdown-single.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FileInputComponent } from './components/file-input/file-input.component';
+import { MpbsInputModuleModule } from './components/inputs/mpbs-input-module.module';
+import { MpbsButtonsModuleModule } from './components/buttons/mpbs-buttons-module.module';
 
 @NgModule({
   declarations: [
@@ -36,8 +36,6 @@ import { FileInputComponent } from './components/file-input/file-input.component
     FeedPageComponent,
     DevPageComponent,
     SupportTicketSubmissionComponent,
-    DropdownSingleComponent,
-    FileInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +44,8 @@ import { FileInputComponent } from './components/file-input/file-input.component
     HttpClientModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    MpbsInputModuleModule,
+    MpbsButtonsModuleModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpMiddleware, multi: true},

@@ -4,7 +4,7 @@ import { SupportTicket, SupportTicketType } from 'generated/api/payloads/support
 import { StringUtils } from '../../shared/util/StringUtils';
 import { AlertBroker } from '../alert/alert-broker';
 import { AlertType } from '../alert/alert.model';
-import { DropdownOption } from '../dropdown-single/dropdown.model';
+import { DropdownOption } from '../inputs/dropdown-single/dropdown.model';
 
 
 @Component({

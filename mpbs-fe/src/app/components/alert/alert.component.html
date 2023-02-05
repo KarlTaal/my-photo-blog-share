@@ -7,15 +7,10 @@
       <fa-icon [icon]="resolveIcon(alert.type)"></fa-icon>
       <div class="alert-text-content" [innerHTML]="alert.content"></div>
       <em class="fa-solid fa-user"></em>
-      <fa-icon
-          *ngIf="alert.dismissible"
-          (click)="alertBroker.dismiss(alert)"
-          [icon]="getCloseIcon()"
-          class="cursor-pointer"
-      ></fa-icon>
+      <mpbs-close-button *ngIf="alert.dismissible" (click)="alertBroker.dismiss(alert)"></mpbs-close-button>
     </div>
   </div>
   <div *ngIf="alertBroker.getAllAlerts().length > 1" class="d-flex justify-content-end">
-    <span (click)="alertBroker.dismissAll()" class="badge rounded-pill bg-primary cursor-pointer">Dismiss All</span>
+    <mpbs-badge-button (click)="alertBroker.dismissAll()">Dismiss All</mpbs-badge-button>
   </div>
 </div>
