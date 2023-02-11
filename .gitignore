@@ -14,3 +14,5 @@
 **/.angular/
 
 **/generated/
+
+**/.DS_Store
