@@ -58,7 +58,7 @@ $titanSize: 84px;
 
       width: $titanSize;
       height: $titanSize;
-      border-radius: $titanSize / 2;
+      border-radius: calc($titanSize / 2);
       background: #a5c6ff;
       transform-style: preserve-3d;
       box-shadow: 0px 0px 0px 4px rgba(169, 187, 236, 0.38823529411764707) inset, -30px -20px 50px #637bff inset;
@@ -90,7 +90,7 @@ $titanSize: 84px;
 
       width: $saturnSize;
       height: $saturnSize;
-      border-radius: $saturnSize / 2;
+      border-radius: calc($saturnSize / 2);
       background: white;
       transform-style: preserve-3d;
       box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.32941176470588235) inset, -30px -20px 50px #a5adff inset;
@@ -101,7 +101,7 @@ $titanSize: 84px;
 
         width: $saturnSize;
         height: $saturnSize;
-        border-radius: $saturnSize / 2;
+        border-radius: calc($saturnSize / 2);
         overflow: hidden;
 
         & .face_clip {
@@ -159,7 +159,7 @@ $titanSize: 84px;
             }
 
             &:nth-of-type(#{$i}) {
-              animation: spark--#{$i} 1s ($i / 10) + 0s infinite;
+              animation: spark--#{$i} 1s (calc($i / 10)) + 0s infinite;
             }
           }
         }
@@ -169,7 +169,7 @@ $titanSize: 84px;
         @extend %absPosition;
 
         transform: rotateX(84deg) rotateY(8deg);
-        transform-origin: 50% $saturnRingSize / 2 - 0px;
+        transform-origin: 50% calc($saturnRingSize / 2) - 0px;
         animation: ring 0.6s infinite linear;
         top: -80px;
 
@@ -177,14 +177,14 @@ $titanSize: 84px;
           @extend %absPosition;
 
           animation: spin 0.6s infinite linear;
-          transform-origin: 50% $saturnRingSize / 2 + 30;
+          transform-origin: 50% calc($saturnRingSize / 2) + 30;
           top: -50px;
 
           &_part {
             @for $i from 1 through 40 {
               &:nth-of-type(#{$i}) {
                 transform: rotate(2deg * $i);
-                height: 10px - ($i / 4);
+                height: 10px - (calc($i / 4));
               }
             }
 
@@ -192,7 +192,7 @@ $titanSize: 84px;
 
             width: 30px;
             background: #08f7ff;
-            transform-origin: 50% $saturnRingSize / 2 + 30;
+            transform-origin: 50% calc($saturnRingSize / 2) + 30;
           }
         }
 
@@ -223,11 +223,11 @@ $titanSize: 84px;
             width: 20px;
             height: $saturnRingWidth;
             background: #21ced2;
-            transform-origin: 50% $saturnRingSize / 2;
+            transform-origin: 50% calc($saturnRingSize / 2);
 
             @for $i from 1 through $saturnRingSegments {
               &:nth-of-type(#{$i}) {
-                transform: translateY(-50%) rotate(360 / $saturnRingSegments * $i + 0deg)
+                transform: translateY(-50%) rotate(calc(360 / $saturnRingSegments) * $i + 0deg)
               }
             }
           }
