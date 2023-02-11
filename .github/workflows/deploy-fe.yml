@@ -16,8 +16,12 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install dependencies
+      - name: Install dependencies mpbs-fe
         working-directory: ./mpbs-fe
+        run: npm install
+
+      - name: Install protobuf typescript dependencies
+        working-directory: ./mpbs-protobuf
         run: npm install
 
       - name: Generate protobuf
