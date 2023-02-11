@@ -5,7 +5,7 @@ on:
     branches:
       - master
 jobs:
-  Deploy FE To Github Pages:
+  Deploy-Fe-To-Github-Pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
