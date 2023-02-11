@@ -1,0 +1,19 @@
+name: MPBS-FE deployment to github pages
+run-name: ${{ github.actor }} deploying to github pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  ng-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set-up Node
+        uses: actions/setup-node@v1
+        with:
+          - node-version: "10.x"
+      - run: npm install
+      - run: ng build
+      - run: ng deploy --base-href=https://GithubUserName.github.io/GithubRepoName/
