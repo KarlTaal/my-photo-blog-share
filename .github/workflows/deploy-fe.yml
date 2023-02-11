@@ -17,7 +17,9 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
+        working-directory: ./mpbs-fe
         run: npm install
 
       - name: Deploy
+        working-directory: ./mpbs-fe
         run: ng deploy --base-href=https://GithubUserName.github.io/GithubRepoName/
