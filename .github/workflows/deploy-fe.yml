@@ -5,7 +5,7 @@ on:
     branches:
       - master
 jobs:
-  ng-deploy:
+  Deploy FE To Github Pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,4 +22,4 @@ jobs:
 
       - name: Deploy
         working-directory: ./mpbs-fe
-        run: ng deploy --base-href=https://GithubUserName.github.io/GithubRepoName/
+        run: npm deploy-gh-pages
