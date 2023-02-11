@@ -22,7 +22,7 @@ jobs:
 
       - name: Generate protobuf
         working-directory: ./mpbs-protobuf
-        run: ./generate-fe.sh
+        run: chmod +x ./generate-fe.sh
         shell: bash
 
       - name: Deploy
