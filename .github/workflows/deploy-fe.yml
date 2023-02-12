@@ -13,7 +13,7 @@ jobs:
 
       - name: Test echo
         working-directory: ./mpbs-protobuf
-        run: chmod +x test.sh
+        run: test.sh
         shell: bash
 
       - name: Set-up Node
