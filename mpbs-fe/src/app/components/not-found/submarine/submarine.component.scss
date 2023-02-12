@@ -29,15 +29,17 @@ $seaGroundColor2: #08003b;
   bottom: 0;
   background: linear-gradient(#2a294e, #130560);
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .submarine__container {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 400px;
   height: 200px;
   transform: translate(-50%, -50%);
+  margin-bottom: 10rem;
 }
 
 .submarine__body {
@@ -374,5 +376,17 @@ $ground-class: up;
   95%, 100% {
     left: 1050%;
     opacity: 0;
+  }
+}
+
+@media screen and (max-height: 1000px),  screen and (max-width: 1150px){
+  .submarine__container {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-height: 700px),  screen and (max-width: 700px){
+  .submarine__container{
+    transform: scale(0.4);
   }
 }

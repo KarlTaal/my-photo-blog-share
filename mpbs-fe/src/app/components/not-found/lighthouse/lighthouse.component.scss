@@ -528,3 +528,10 @@ html {
     transform: skewX(-55deg) translateX(-40px);
   }
 }
+
+
+@media all and (max-height: 1000px) {
+  .lighthouse-group{
+    display: none;
+  }
+}
