@@ -14,7 +14,6 @@ jobs:
       - name: Test echo 2
         working-directory: ./mpbs-protobuf
         run: ./test.sh
-        shell: bash
 
       - name: Set-up Node
         uses: actions/setup-node@v1
