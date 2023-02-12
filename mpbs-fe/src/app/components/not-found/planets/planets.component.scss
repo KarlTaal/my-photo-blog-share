@@ -440,13 +440,13 @@ $titanSize: 84px;
   }
 }
 
-@media only screen and (max-width: 1150px) {
+@media screen and (max-width: 1150px) {
   .planets {
     right: 40rem;
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px), screen and (max-height: 700px) {
   .scene {
     display: none;
   }
