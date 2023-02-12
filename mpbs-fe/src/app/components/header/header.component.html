@@ -1,9 +1,10 @@
 <div class="mpbs-header">
   <div class="header-nav-links-container">
-    <a [routerLink]="'/home'">HOME</a>
-    <a [routerLink]="'/feed'">FEED</a>
-    <a [routerLink]="'/about'">ABOUT</a>
-    <a [routerLink]="'/support'">SUPPORT</a>
-    <a [routerLink]="'/dev'">DEV</a>
+    <a *ngFor="let route of getHeaderRoutes()"
+       [routerLink]="route.path"
+       [ngClass]="{'active-route' : isRouteActive(route)}"
+    >
+      {{ route.title?.toString() | uppercase }}
+    </a>
   </div>
 </div>

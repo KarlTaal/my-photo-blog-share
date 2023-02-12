@@ -27,6 +27,7 @@ import { SubmarineComponent } from './components/not-found/submarine/submarine.c
 import { PlanetsComponent } from './components/not-found/planets/planets.component';
 import { FishComponent } from './components/not-found/fish/fish.component';
 import { SquidComponent } from './components/not-found/ocean-bubbles/squid.component';
+import { LoginPageComponent } from './views/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SquidComponent } from './components/not-found/ocean-bubbles/squid.compo
     PlanetsComponent,
     FishComponent,
     SquidComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
