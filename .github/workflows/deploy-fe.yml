@@ -17,12 +17,12 @@ jobs:
           node-version: '16'
 
       - name: Set-up protobuf
-        uses: wizhi/setup-buf@v1
+        uses: wizhi/setup-buf@v2
         with:
           version: '0.36.0'
 
       - name: Set-up protoc
-        uses: arduino/setup-protoc@v1
+        uses: arduino/setup-protoc@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
