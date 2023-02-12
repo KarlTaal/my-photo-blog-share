@@ -22,7 +22,7 @@ jobs:
           version: '0.36.0'
 
       - name: Set-up protoc
-        uses: arduino/setup-protoc@v2
+        uses: arduino/setup-protoc@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
