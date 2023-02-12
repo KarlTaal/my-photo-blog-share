@@ -41,8 +41,3 @@ jobs:
       - name: Deploy
         working-directory: ./mpbs-fe
         run: npm run deploy-gh-pages
-
-      - name: Deploy
-        run: npm run deploy-gh-pages
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
