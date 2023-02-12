@@ -41,8 +41,8 @@ jobs:
       - name: Deploy
         working-directory: ./mpbs-fe
         env:
-          MY_EMAIL: "<>"
-          MY_NAME: "GitHub Deploy Bot"
+          MY_EMAIL: <>
+          MY_NAME: GitHub-Deploy-Bot
         run: |
           git config --global user.email $MY_EMAIL
           git config --global user.name $MY_NAME
