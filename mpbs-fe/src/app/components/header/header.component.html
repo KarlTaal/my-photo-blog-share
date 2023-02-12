@@ -1,7 +1,9 @@
 <div class="mpbs-header">
-  <button [routerLink]="'/home'" class="btn btn-info">HOME</button>
-  <button [routerLink]="'/feed'" class="btn btn-info">FEED</button>
-  <button [routerLink]="'/about'" class="btn btn-info">ABOUT</button>
-  <button [routerLink]="'/support'" class="btn btn-info">SUPPORT</button>
-  <button [routerLink]="'/dev'" class="btn btn-info">DEV</button>
+  <div class="header-nav-links-container">
+    <a [routerLink]="'/home'">HOME</a>
+    <a [routerLink]="'/feed'">FEED</a>
+    <a [routerLink]="'/about'">ABOUT</a>
+    <a [routerLink]="'/support'">SUPPORT</a>
+    <a [routerLink]="'/dev'">DEV</a>
+  </div>
 </div>

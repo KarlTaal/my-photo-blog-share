@@ -1,2 +1,8 @@
 @import "assets/css/fade";
 @import "assets/css/effects";
+
+@media all and (max-width: 500px) {
+  :root {
+    font-size: 13px;
+  }
+}

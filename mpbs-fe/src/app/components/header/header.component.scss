@@ -1,6 +1,20 @@
 .mpbs-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   background-color: #93a2a0;
-  height: 4rem;
+  padding: 1rem;
+}
+
+.header-nav-links-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  a {
+    color: white;
+    background-color: #606064;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.4rem;
+    text-decoration: unset;
+  }
 }

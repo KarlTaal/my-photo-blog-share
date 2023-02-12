@@ -1,17 +1,13 @@
 .container-small {
-  width: 6rem;
+  max-width: 6rem;
 }
 
 .container-normal {
-  width: 11rem;
+  max-width: 11rem;
 }
 
 .container-large {
-  width: 17rem;
-}
-
-.container-max {
-  width: 100%;
+  max-width: 17rem;
 }
 
 .select-icon {

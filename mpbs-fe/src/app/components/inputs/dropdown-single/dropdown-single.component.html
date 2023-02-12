@@ -1,8 +1,9 @@
 <div
     *ngIf="formGroup && formKey"
     [formGroup]="formGroup"
+    class="container-max"
     [ngClass]="getSizeClass()"
-    style="position:relative;"
+    style="position:relative; width: 100%;"
 >
   <select
       class="form-control cursor-pointer"

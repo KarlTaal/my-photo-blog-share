@@ -7,5 +7,6 @@
 .support-ticket-actions {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 1rem;
 }

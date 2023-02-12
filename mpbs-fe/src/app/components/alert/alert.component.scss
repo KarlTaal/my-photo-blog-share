@@ -2,7 +2,11 @@
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
+
+  max-height: 90vh;
+  overflow-y: scroll;
 }
 
 .alert-container {
@@ -15,4 +19,10 @@
 .alert-text-content {
   width: 100%;
   word-break: break-word;
+}
+
+@media all and (max-width: 500px) {
+  .alerts-container{
+    max-width: 15rem;
+  }
 }

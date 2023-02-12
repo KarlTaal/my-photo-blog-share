@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { DropdownOption } from './dropdown.model';
@@ -12,7 +11,7 @@ import { AbstractInputComponent } from '../abstract-input.component';
 })
 export class DropdownSingleComponent extends AbstractInputComponent {
   @Input() options: DropdownOption[] = [];
-  @Input() size: 'small' | 'normal' | 'large' | 'max' = 'normal';
+  @Input() size: 'small' | 'normal' | 'large' = 'normal';
 
   getSizeClass(): string {
     switch (this.size){
@@ -22,8 +21,6 @@ export class DropdownSingleComponent extends AbstractInputComponent {
         return 'container-normal';
       case 'large':
         return 'container-large';
-      case 'max':
-        return 'container-max';
       default:
         return 'normal'
     }
