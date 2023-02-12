@@ -11,6 +11,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Test echo
+        working-directory: ./mpbs-protobuf
+        run: chmod +x test.sh
+        shell: bash
+
       - name: Set-up Node
         uses: actions/setup-node@v1
         with:
