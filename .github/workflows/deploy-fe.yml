@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Test echo
+      - name: Test echo 2
         working-directory: ./mpbs-protobuf
         run: ./test.sh
         shell: bash
