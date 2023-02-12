@@ -13,7 +13,7 @@ jobs:
 
       - name: Test echo 2
         working-directory: ./mpbs-protobuf
-        run: test.sh
+        run: ./test.sh
 
       - name: Set-up Node
         uses: actions/setup-node@v1
@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate protobuf
         working-directory: ./mpbs-protobuf
-        run: generate-fe.sh
+        run: ./generate-fe.sh
 
       - name: Install dependencies mpbs-fe
         working-directory: ./mpbs-fe
