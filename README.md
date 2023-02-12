@@ -3,7 +3,7 @@
 ## Projects
 
 - `mpbs-fe`: Angular front-end application
-- `mpbs-be`: Go Land backend application with Echo framework for REST API
+- `mpbs-be`: Go Lang backend application with Echo framework for REST API
 - `mpbs-protobuf`: Protobuf repository for proto contracts between backend and front-end. No gRPC is used. Protos are used solely as a common source for REST API messages as json. 
 - `github.workflows`: Github Actions workflows
 
