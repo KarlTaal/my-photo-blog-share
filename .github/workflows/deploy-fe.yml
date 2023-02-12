@@ -28,7 +28,7 @@ jobs:
       - name: Set-up protoc
         uses: arduino/setup-protoc@v1
         with:
-          version: '3.x'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate protobuf
         working-directory: ./mpbs-protobuf
