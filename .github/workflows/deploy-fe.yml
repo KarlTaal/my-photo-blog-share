@@ -11,10 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Test echo 2
-        working-directory: ./mpbs-protobuf
-        run: ./test.sh
-
       - name: Set-up Node
         uses: actions/setup-node@v1
         with:
@@ -30,10 +26,6 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate protobuf
-        working-directory: ./mpbs-protobuf
-        run: ./generate-fe.sh
-
       - name: Install dependencies mpbs-fe
         working-directory: ./mpbs-fe
         run: npm install
@@ -41,6 +33,10 @@ jobs:
       - name: Install protobuf typescript dependencies
         working-directory: ./mpbs-protobuf
         run: npm install
+
+      - name: Generate protobuf
+        working-directory: ./mpbs-protobuf
+        run: ./generate-fe.sh
 
       - name: Deploy
         working-directory: ./mpbs-fe
