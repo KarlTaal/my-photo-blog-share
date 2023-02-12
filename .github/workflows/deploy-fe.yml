@@ -40,4 +40,11 @@ jobs:
 
       - name: Deploy
         working-directory: ./mpbs-fe
-        run: npm run deploy-gh-pages
+        env:
+          MY_EMAIL: "<>"
+          MY_NAME: "GitHub Deploy Bot"
+        run: |
+          git config user.name $MY_NAME
+          git config user.email $MY_EMAIL
+          git remote set-url origin https://$MY_NAME:${{ secrets.GH_TOKEN }}@github.com:KarlTaal/my-photo-blog-share.git
+          npm run deploy-gh-pages
