@@ -28,6 +28,7 @@ import { PlanetsComponent } from './components/not-found/planets/planets.compone
 import { FishComponent } from './components/not-found/fish/fish.component';
 import { SquidComponent } from './components/not-found/ocean-bubbles/squid.component';
 import { LoginPageComponent } from './views/login-page/login-page.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { LoginPageComponent } from './views/login-page/login-page.component';
     FishComponent,
     SquidComponent,
     LoginPageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

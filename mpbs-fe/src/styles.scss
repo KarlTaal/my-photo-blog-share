@@ -1,6 +1,17 @@
 @import "assets/css/fade";
 @import "assets/css/effects";
 
+.mpbs-container {
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .mpbs-body {
+    flex: 1;
+  }
+}
+
 @media all and (max-width: 500px) {
   :root {
     font-size: 13px;
