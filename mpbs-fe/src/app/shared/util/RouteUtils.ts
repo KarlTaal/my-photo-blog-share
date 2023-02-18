@@ -8,18 +8,14 @@ import { DevPageComponent } from '../../views/dev-page/dev-page.component';
 import { PageNotFoundPageComponent } from '../../views/page-not-found-page/page-not-found-page.component';
 
 export class RouteUtils {
-
   static getHeaderRoutes(): Route[] {
     return [
       LOGIN_ROUTE,
       HOME_ROUTE,
       FEED_ROUTE,
-      ABOUT_ROUTE,
-      SUPPORT_ROUTE,
       DEV_ROUTE,
     ];
   }
-
 }
 
 export const LOGIN_ROUTE: Route = {path: 'login', title: 'Login', component: LoginPageComponent};

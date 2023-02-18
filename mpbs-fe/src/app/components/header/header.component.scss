@@ -1,7 +1,7 @@
 .mpbs-header {
   display: flex;
   justify-content: center;
-  background-color: #93a2a0;
+  background-color: var(--header-bg-color);
   padding: 1rem;
 }
 
@@ -11,7 +11,7 @@
   gap: 0.5rem;
 
   a {
-    color: white;
+    color: var(--text-primary);
     background-color: #606064;
     padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;

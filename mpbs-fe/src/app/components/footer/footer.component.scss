@@ -1,0 +1,12 @@
+footer{
+  border-top: solid 0.3rem var(--header-bg-color);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+a {
+  color: var(--text-secondary);
+}
