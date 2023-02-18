@@ -2,6 +2,10 @@
 @import "assets/css/effects";
 @import "assets/css/variables";
 
+* {
+  font-family: "Courier New", serif;
+}
+
 .mpbs-container {
   background-color: var(--main-bg-color);
   display: flex;

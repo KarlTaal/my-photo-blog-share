@@ -29,6 +29,8 @@ import { FishComponent } from './components/not-found/fish/fish.component';
 import { SquidComponent } from './components/not-found/ocean-bubbles/squid.component';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SharePageComponent } from './views/share-page/share-page.component';
+import { ProfilePageComponent } from './views/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SquidComponent,
     LoginPageComponent,
     FooterComponent,
+    SharePageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,14 +8,13 @@
 .header-nav-links-container{
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
 
   a {
+    font-size: 1.2rem;
     color: var(--text-primary);
-    background-color: #606064;
-    padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;
     text-decoration: unset;
+    margin: 0 2.5rem;
   }
 
   .active-route {

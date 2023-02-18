@@ -7,6 +7,8 @@ import {
   HOME_ROUTE,
   LOGIN_ROUTE,
   PAGE_NOT_FOUND_ROUTE,
+  PROFILE_ROUTE,
+  SHARE_ROUTE,
   SUPPORT_ROUTE,
 } from './shared/util/RouteUtils';
 
@@ -18,7 +20,9 @@ const routes: Routes = [
   },
   LOGIN_ROUTE,
   HOME_ROUTE,
+  SHARE_ROUTE,
   FEED_ROUTE,
+  PROFILE_ROUTE,
   ABOUT_ROUTE,
   SUPPORT_ROUTE,
   DEV_ROUTE,
