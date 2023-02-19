@@ -1,17 +1,16 @@
 # nixpacks.toml
 
 [phases.setup]
-providers = ['go', 'swag']
+providers = ['go', 'swag', 'protoc']
 nixPkgs = ['go']
 
 [phases.build]
 cmds = [
-    'echo Hello!',
-    'echo folder content:; ls;',
-    'cd mpbs-protobuf; ./generate-be.sh',
-    'cd mpbs-be; wag init main.go --output docs;',
-    'cd mpbs-be; go build -o out;'
+    'echo Starting Go backend build.',
+    'echo Generating Go protos; cd mpbs-protobuf; ./generate-be.sh',
+    'echo Generating Swagger documentation; cd mpbs-be; swag init main.go --output docs;',
+    'echo Buildin Go project; cd mpbs-be; go build -o out;'
 ]
 
 [start]
-cmd = './out'
+cmd = 'cd mpbs-be; ./out;'
