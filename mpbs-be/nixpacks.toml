@@ -8,7 +8,7 @@ nixPkgs = ['...']
 cmds = [
     'echo Hello!',
     'echo path $PWD',
-    'cd ..',
+    'cd ..; echo path $PWD;',
     'echo path $PWD',
     '../mpbs-be/generate-be.sh',
     'echo Hello 3!',
