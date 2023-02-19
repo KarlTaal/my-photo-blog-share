@@ -3,6 +3,8 @@
 [phases.setup]
 providers = ['go', 'swag', 'protoc-gen-go']
 nixPkgs = ['go']
+cmds = ['brew install protobuf']
+paths = ['/opt/homebrew/opt/protobuf@3/bin']
 
 [phases.build]
 cmds = [
