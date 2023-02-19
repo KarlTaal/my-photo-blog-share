@@ -1,7 +1,7 @@
 # nixpacks.toml
 
 [phases.setup]
-providers = ['go', 'swag', 'protobuf']
+providers = ['go', 'swag', 'protoc-gen-go']
 nixPkgs = ['go']
 
 [phases.build]
