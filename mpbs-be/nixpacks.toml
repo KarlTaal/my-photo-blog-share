@@ -1,0 +1,10 @@
+# nixpacks.toml
+
+[phases.setup]
+nixPkgs = ['...', 'swag']
+
+[phases.build]
+cmds = ['swag init main.go --output docs', 'go build -o out']
+
+[start]
+cmd = './out'
