@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertBroker } from '../../components/alert/alert-broker';
-import { MpbsService } from '../../shared/services/mpbs.service';
+import { AlertType } from '../../components/alert/alert.model';
+import { HealthService } from '../../shared/services/health/health.service';
 
 @Component({
   selector: 'mpbs-dev-page',
@@ -9,45 +10,28 @@ import { MpbsService } from '../../shared/services/mpbs.service';
 })
 export class DevPageComponent implements OnInit {
 
-  constructor(private alertBroker: AlertBroker, private mpbsService: MpbsService) {
+  constructor(private alertBroker: AlertBroker, private healthService: HealthService) {
   }
 
   ngOnInit(): void {
-    this.sendDummyRequests();
   }
 
   addAlert() {
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SUCCESS, true, 5);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DANGER, true);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.PRIMARY, false, 15);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SECONDARY, true, 30);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SUCCESS, false, 30);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DANGER, false, 30);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.WARNING, true, 30);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.INFO, true, 30);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.LIGHT, false, 30);
-    //this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DARK, true, 30);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SUCCESS);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DANGER);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.PRIMARY);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SECONDARY);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SUCCESS);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DANGER);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.WARNING);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.INFO);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.LIGHT);
+    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DARK);
   }
 
-  sendDummyRequests() {
-    this.mpbsService.healthCheck().subscribe({
-      next: () => console.log(`1_success`),
-      error: () => console.log(`1_error`),
-    });
-
-    this.mpbsService.timeout().subscribe({
-      next: () => console.log(`2_success`),
-      error: () => console.log(`2_error`),
-    });
-
-    this.mpbsService.internalError().subscribe({
-      next: () => console.log(`3_success`),
-      error: () => console.log(`3_error`),
-    });
-
-    this.mpbsService.authRequired().subscribe({
-      next: () => console.log(`4_success`),
-      error: () => console.log(`4_error`),
+  healthCheck() {
+    this.healthService.healthCheck().subscribe({
+      next: (response) => this.alertBroker.add(response, AlertType.SUCCESS),
     });
   }
 }

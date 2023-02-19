@@ -13,7 +13,7 @@ import (
 // @version 1.0
 
 // @host localhost:1323
-// @BasePath /
+// @BasePath /mpbs/api
 // @schemes http
 func main() {
 	e := echo.New()
@@ -24,8 +24,9 @@ func main() {
 
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 
-	health.InitHealthRoutes(e)
-	support.InitSupportRoutes(e)
+	baseUrl := "/mpbs/api"
+	health.InitHealthRoutes(e, baseUrl)
+	support.InitSupportRoutes(e, baseUrl)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
