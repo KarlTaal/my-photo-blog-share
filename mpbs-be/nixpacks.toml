@@ -8,6 +8,7 @@ nixPkgs = ['...']
 cmds = [
     'echo Hello!',
     './generate-be.sh',
+    'echo Hello 2!',
     'swag init main.go --output docs',
     'go build -o out'
 ]
