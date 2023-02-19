@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  mpbsApiServerUrl: 'http://production/'
+  title: "Production environment",
+  mpbsApiServerUrl: 'https://unknown-production-url/'
 };

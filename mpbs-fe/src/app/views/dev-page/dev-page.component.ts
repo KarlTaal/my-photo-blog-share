@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AlertBroker } from '../../components/alert/alert-broker';
 import { AlertType } from '../../components/alert/alert.model';
 import { HealthService } from '../../shared/services/health/health.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'mpbs-dev-page',
   templateUrl: './dev-page.component.html',
-  styleUrls: [ './dev-page.component.scss' ],
 })
 export class DevPageComponent implements OnInit {
 
@@ -33,5 +33,9 @@ export class DevPageComponent implements OnInit {
     this.healthService.healthCheck().subscribe({
       next: (response) => this.alertBroker.add(response, AlertType.SUCCESS),
     });
+  }
+
+  getEnvironmentTitle() {
+    return environment.title;
   }
 }
