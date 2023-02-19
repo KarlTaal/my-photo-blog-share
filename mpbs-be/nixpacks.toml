@@ -1,7 +1,7 @@
 # nixpacks.toml
 
 [phases.setup]
-providers = ['...', 'swag', 'sh']
+providers = ['...', 'swag']
 nixPkgs = ['...']
 
 [phases.build]
