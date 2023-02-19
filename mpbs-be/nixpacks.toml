@@ -7,6 +7,9 @@ nixPkgs = ['...']
 [phases.build]
 cmds = [
     'echo Hello!',
+    'echo path $PWD',
+    'cd ..',
+    'echo path $PWD',
     '../mpbs-be/generate-be.sh',
     'echo Hello 3!',
     'swag init main.go --output docs',
