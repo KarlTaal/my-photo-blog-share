@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+      - paths:
+          - mpbs-fe/**
+          - mpbs-protobuf/**
 jobs:
   Deploy-Fe-To-Github-Pages:
     runs-on: ubuntu-latest
