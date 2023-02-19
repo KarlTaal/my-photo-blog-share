@@ -8,10 +8,10 @@ nixPkgs = ['...']
 cmds = [
     'echo Hello!',
     'echo path $PWD',
-    'cd ..; echo path $PWD;',
+    'cd ..; echo content:; ls;',
     'echo path $PWD',
     '../mpbs-be/generate-be.sh',
-    'echo Hello 3!',
+    'echo Hello 4!',
     'swag init main.go --output docs',
     'go build -o out'
 ]
