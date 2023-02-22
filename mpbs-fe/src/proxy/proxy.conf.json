@@ -1,0 +1,7 @@
+{
+  "/mpbs/api": {
+    "target": "http://localhost:1323",
+    "secure": false
+  }
+}
+

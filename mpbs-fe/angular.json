@@ -42,6 +42,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/proxy/proxy.conf.json",
+                  "with": "src/proxy/proxy.conf.prod.json"
                 }
               ],
               "budgets": [
@@ -78,6 +82,9 @@
             "development": {
               "browserTarget": "mpbs-fe:build:development"
             }
+          },
+          "options": {
+            "proxyConfig": "src/proxy/proxy.conf.json"
           },
           "defaultConfiguration": "development"
         },
