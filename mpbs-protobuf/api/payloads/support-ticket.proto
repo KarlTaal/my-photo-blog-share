@@ -2,7 +2,7 @@ syntax = "proto3";
 option go_package = "protocolbuffers/protobuf/go/payloads";
 
 message SupportTicket {
-  string type = 1;
+  SupportTicketType type = 1;
   string body = 2;
 }
 

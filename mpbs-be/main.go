@@ -4,9 +4,9 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/swaggo/echo-swagger"
-	"mpbs-be/controller/health"
-	"mpbs-be/controller/support"
 	_ "mpbs-be/docs"
+	"mpbs-be/internal/health"
+	"mpbs-be/internal/support"
 )
 
 // @title Echo Swagger API

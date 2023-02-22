@@ -16,7 +16,7 @@ export class SupportTicketSubmissionComponent implements OnInit {
   @Output() submitTicket: EventEmitter<SupportTicket> = new EventEmitter<SupportTicket>();
 
   readonly MIN_BODY_CHAR_LENGTH = 15;
-  readonly DEFAULT_TICKET_TYPE = SupportTicketType[SupportTicketType.GENERAL];
+  readonly DEFAULT_TICKET_TYPE = SupportTicketType.GENERAL;
 
   ticketForm!: FormGroup;
 
@@ -28,10 +28,10 @@ export class SupportTicketSubmissionComponent implements OnInit {
   }
 
   getOptions(): DropdownOption[] {
-    return StringUtils.enumToKeysArray(SupportTicketType).map((enumVal) => {
+    return StringUtils.enumToKeysArray(SupportTicketType).map((enumKey) => {
       return {
-        value: enumVal,
-        label: StringUtils.toTitleCase(enumVal),
+        value: SupportTicketType[enumKey as keyof typeof SupportTicketType],
+        label: StringUtils.toTitleCase(enumKey),
       };
     });
   }
