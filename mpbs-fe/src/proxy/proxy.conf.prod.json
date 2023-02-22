@@ -1,5 +1,6 @@
 {
   "/mpbs/api": {
+    "pathRewrite": { "^/mpbs/api": "" },
     "target": "https://my-photo-blog-share-production.up.railway.app",
     "changeOrigin": true,
     "secure": false
