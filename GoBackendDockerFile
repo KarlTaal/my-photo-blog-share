@@ -9,11 +9,7 @@ RUN go install github.com/swaggo/swag/cmd/swag@latest
 RUN mkdir -p mpbs-be
 RUN mkdir -p mpbs-protobuf
 
-COPY ./mpbs-be/controller ./mpbs-be/controller
-COPY ./mpbs-be/main.go ./mpbs-be/main.go
-COPY ./mpbs-be/go.mod ./mpbs-be/go.mod
-COPY ./mpbs-be/go.sum ./mpbs-be/go.sum
-COPY ./mpbs-be/controller ./mpbs-be/controller
+COPY ./mpbs-be ./mpbs-be
 COPY ./mpbs-protobuf/api ./mpbs-protobuf/api
 COPY ./mpbs-protobuf/generate-be.sh ./mpbs-protobuf/generate-be.sh
 
