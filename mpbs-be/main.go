@@ -7,7 +7,6 @@ import (
 	_ "mpbs-be/docs"
 	"mpbs-be/internal/health"
 	"mpbs-be/internal/support"
-	"net/http"
 )
 
 // @title Echo Swagger API
@@ -22,10 +21,10 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+	/*e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"https://karltaal.github.io"},
 		AllowMethods: []string{http.MethodGet, http.MethodPost},
-	}))
+	}))*/
 
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 

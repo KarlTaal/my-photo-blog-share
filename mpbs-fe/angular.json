@@ -73,12 +73,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mpbs-fe:build:production",
-              "proxyConfig": "src/proxy/proxy.conf.prod.json"
+              "browserTarget": "mpbs-fe:build:production"
             },
             "development": {
               "browserTarget": "mpbs-fe:build:development",
-              "proxyConfig": "src/proxy/proxy.conf.json"
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
