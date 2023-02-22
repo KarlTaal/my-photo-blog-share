@@ -1,8 +1,8 @@
 {
   "/mpbs/api": {
     "target": "https://my-photo-blog-share-production.up.railway.app",
-    "secure": true,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "secure": false
   }
 }
 
