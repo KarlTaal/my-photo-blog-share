@@ -42,10 +42,6 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
-                },
-                {
-                  "replace": "src/proxy/proxy.conf.json",
-                  "with": "src/proxy/proxy.conf.prod.json"
                 }
               ],
               "budgets": [
@@ -77,14 +73,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mpbs-fe:build:production"
+              "browserTarget": "mpbs-fe:build:production",
+              "proxyConfig": "src/proxy/proxy.conf.prod.json"
             },
             "development": {
-              "browserTarget": "mpbs-fe:build:development"
+              "browserTarget": "mpbs-fe:build:development",
+              "proxyConfig": "src/proxy/proxy.conf.json"
             }
-          },
-          "options": {
-            "proxyConfig": "src/proxy/proxy.conf.json"
           },
           "defaultConfiguration": "development"
         },
