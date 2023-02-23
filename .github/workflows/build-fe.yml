@@ -41,6 +41,6 @@ jobs:
         working-directory: ./mpbs-protobuf
         run: ./generate-fe.sh
 
-      - name: Deploy
+      - name: Build
         working-directory: ./mpbs-fe
-        run: npm build
+        run: npm run build
