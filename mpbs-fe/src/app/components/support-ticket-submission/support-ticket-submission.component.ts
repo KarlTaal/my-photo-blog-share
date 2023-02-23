@@ -45,7 +45,7 @@ export class SupportTicketSubmissionComponent implements OnInit {
       this.emitTicket();
     } else {
       if (this.ticketForm?.invalid) {
-        this.alertBroker.add(`Teksti miinimum pikkus on ${ this.MIN_BODY_CHAR_LENGTH } tähemärki`, AlertType.DANGER);
+        this.alertBroker.add(`Teksti miinimum pikkus on ${ this.MIN_BODY_CHAR_LENGTH } tähemärki.`, AlertType.DANGER);
       }
     }
   }

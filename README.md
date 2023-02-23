@@ -12,4 +12,4 @@
 For documentation, tasks and support tickets [Click-Up](https://app.clickup.com/9004021818/v/s/90040045461) is used.
 
 ## Deployments
-- `mpbs-fe` is deployed on master branch automatically to Github Pages [here](https://karltaal.github.io/my-photo-blog-share).
+- `mpbs-fe` is deployed [here](https://mpbs-fe-production.up.railway.app/home).
