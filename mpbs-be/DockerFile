@@ -22,6 +22,6 @@ COPY --from=itinance/swag /root/swag /usr/local/bin
 RUN swag init main.go --output docs
 RUN go build -o /mpbs-be
 
-EXPOSE 1323
+EXPOSE 6474
 
 CMD [ "/mpbs-be" ]
