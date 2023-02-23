@@ -17,16 +17,16 @@ export class DevPageComponent implements OnInit {
   }
 
   addAlert() {
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SUCCESS);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DANGER);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.PRIMARY);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SECONDARY);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.SUCCESS);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DANGER);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.WARNING);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.INFO);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.LIGHT);
-    this.alertBroker.add('testing <b>allows bold</b> alert better than pria', AlertType.DARK);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.SUCCESS);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.DANGER);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.PRIMARY);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.SECONDARY);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.SUCCESS);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.DANGER);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.WARNING);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.INFO);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.LIGHT);
+    this.alertBroker.add('testing <b>bold</b> <i>italic</i> <u>underline</u>', AlertType.DARK);
   }
 
   healthCheck() {

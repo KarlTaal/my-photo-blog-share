@@ -1,5 +1,7 @@
+@import "src/assets/css/variables";
+
 footer{
-  border-top: solid 0.3rem var(--header-bg-color);
+  border-top: solid 0.3rem $header-bg-color;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -8,5 +10,5 @@ footer{
 }
 
 a {
-  color: var(--text-secondary);
+  color: $text-secondary;
 }

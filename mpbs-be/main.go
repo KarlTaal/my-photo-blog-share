@@ -5,6 +5,7 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/swaggo/echo-swagger"
 	_ "mpbs-be/docs"
+	"mpbs-be/internal/constants"
 	"mpbs-be/internal/health"
 	"mpbs-be/internal/support"
 )
@@ -21,16 +22,10 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	/*e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"https://karltaal.github.io"},
-		AllowMethods: []string{http.MethodGet, http.MethodPost},
-	}))*/
+	e.GET(constants.SwaggerRoute, echoSwagger.WrapHandler)
 
-	e.GET("/swagger/*", echoSwagger.WrapHandler)
+	health.InitHealthRoutes(e, constants.BaseRoute)
+	support.InitSupportRoutes(e, constants.BaseRoute)
 
-	baseUrl := "/mpbs/api"
-	health.InitHealthRoutes(e, baseUrl)
-	support.InitSupportRoutes(e, baseUrl)
-
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(constants.Port))
 }

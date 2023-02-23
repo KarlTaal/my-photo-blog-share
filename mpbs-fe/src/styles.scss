@@ -7,18 +7,25 @@
 }
 
 .mpbs-container {
-  background-color: var(--main-bg-color);
+  background-color: $main-bg-color;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
   .mpbs-body {
     flex: 1;
+    margin: 5rem;
   }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: $width-break-point) {
   :root {
     font-size: 13px;
+  }
+
+  .mpbs-container {
+    .mpbs-body {
+      margin: 1rem;
+    }
   }
 }

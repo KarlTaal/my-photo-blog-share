@@ -1,7 +1,9 @@
+@import "src/assets/css/variables";
+
 .mpbs-header {
   display: flex;
   justify-content: center;
-  background-color: var(--header-bg-color);
+  background-color: $header-bg-color;
   padding: 1rem;
 }
 
@@ -11,7 +13,7 @@
 
   a {
     font-size: 1.2rem;
-    color: var(--text-primary);
+    color: $text-primary;
     border-radius: 0.4rem;
     text-decoration: unset;
     margin: 0 2.5rem;

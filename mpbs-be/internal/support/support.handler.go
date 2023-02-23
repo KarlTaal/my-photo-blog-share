@@ -3,17 +3,17 @@ package support
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"mpbs-be/generated/protocolbuffers/protobuf/go/payloads"
+	"mpbs-be/internal/constants"
 	"net/http"
 	_ "net/http/httputil"
 	"os"
 	"time"
 )
 
-// CreateSupportTicketHandler godoc
+// createSupportTicketHandler godoc
 //
 //	@Summary		Support ticket create
 //	@Description	Create new support ticket
@@ -21,7 +21,7 @@ import (
 //	@Produce		json
 //	@Param			ticket	body	payloads.SupportTicket	true	"Add support ticket"
 //	@Router			/support/ticket [post]
-func CreateSupportTicketHandler(c echo.Context) error {
+func createSupportTicketHandler(c echo.Context) error {
 	supportTicket := new(payloads.SupportTicket)
 	if err := c.Bind(supportTicket); err != nil {
 		return err
@@ -31,29 +31,29 @@ func CreateSupportTicketHandler(c echo.Context) error {
 
 	jsonValue, _ := json.Marshal(postBody)
 	req, err := http.NewRequest("POST", getClickUpPostTicketUrl(), bytes.NewBuffer(jsonValue))
-	req.Header.Add("Authorization", os.Getenv("CLICK_UP_API_TOKEN"))
+	req.Header.Add("Authorization", os.Getenv(constants.SupportTicketApiTokenVariableKey))
 	req.Header.Add("Content-Type", "application/json")
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
 
 	if err != nil || resp.StatusCode != http.StatusOK {
-		return errors.New("support ticket submission failed")
+		return echo.ErrBadRequest
 	}
 
 	return c.JSON(http.StatusOK, nil)
 }
 
 func getClickUpPostTicketUrl() string {
-	return fmt.Sprintf("https://api.clickup.com/api/v2/list/%s/task", os.Getenv("SUPPORT_TICKET_LIST_ID"))
+	return fmt.Sprintf(clickUpPostTicketUrl, os.Getenv(constants.SupportTicketListIdVariableKey))
 }
 
-func createClickUpTicketPostMessage(supportTicket *payloads.SupportTicket) ClickUpPostTicket {
-	return ClickUpPostTicket{
+func createClickUpTicketPostMessage(supportTicket *payloads.SupportTicket) clickUpPostTicket {
+	return clickUpPostTicket{
 		Name:        getTicketTitle(),
 		Description: supportTicket.Body,
 		Tags: []string{
-			"support",
+			clickUpTagSupport,
 			resolveSupportTicketTypeToClickUpTag(supportTicket.Type),
 		},
 		NotifyAll: true,
@@ -61,25 +61,25 @@ func createClickUpTicketPostMessage(supportTicket *payloads.SupportTicket) Click
 }
 
 func getTicketTitle() string {
-	location, _ := time.LoadLocation("Europe/Tallinn")
-	currentTime := time.Now().In(location).Format("01.02.2006 15:04")
-	return fmt.Sprintf("Support ticket %s", currentTime)
+	location, _ := time.LoadLocation(constants.EuropeTallinnLocale)
+	currentTime := time.Now().In(location).Format(constants.DateTimeDisplayFormat)
+	return fmt.Sprintf(clickUpTicketTitle, currentTime)
 }
 
 func resolveSupportTicketTypeToClickUpTag(ticketType payloads.SupportTicketType) string {
 	switch ticketType {
 	case payloads.SupportTicketType_BUG:
-		return "bug"
+		return clickUpTagBug
 	case payloads.SupportTicketType_FEATURE:
-		return "feature"
+		return clickUpTagFeature
 	case payloads.SupportTicketType_GENERAL:
-		return "general"
+		return clickUpTagGeneral
 	default:
-		return "unknown"
+		return clickUpTagUnknown
 	}
 }
 
-type ClickUpPostTicket struct {
+type clickUpPostTicket struct {
 	Name        string   `json:"name"`
 	Description string   `json:"description"`
 	Tags        []string `json:"tags"`
